@@ -95,3 +95,110 @@ body{
 .imagem img {
 	width: 100%; 
 }
+#cardapio .imagem{
+	position: relative;
+	box-shadow: 1px 1px 7px  grey;
+}
+#cardapio .imagem:hover{
+	box-shadow: none;
+}
+#cardapio .imagem::after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: 0%;
+	height: 0%;
+	background-color: black;
+	z-index: -1;
+
+}
+#cardapio .imagem::before{
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -2px;
+	right: -5px;
+	width: 0%;
+	height: 0%;
+	background-color: #20B2AA;
+	z-index: -1;
+}
+#cardapio .imagem:hover::before, #cardapio .imagem:hover::after{
+	width: 80%;
+	height: 80%;
+	transition: all 0.7s ease;
+
+}
+.infos-pratos h3 {
+	margin-bottom: 0;
+}
+.infos-pratos p {
+	margin-top: 10px;
+}
+.bt-destaque{
+	display: block;
+    width: 150px;
+    height: 49px;
+    margin: 100px auto ;
+    text-align: center;
+    padding: 15px 5px;
+    overflow: hidden;
+    border-radius: 200px;
+    background: #20B2AA;
+    color: #fff;  
+    position:relative;
+    box-shadow: 2px 4px 8px #555; 
+    font-size: 16px;
+}
+.bt-destaque::after{
+	content: "";
+	position: absolute;
+	width: 7px;
+	height: 60px;
+	background: rgba(255, 255, 255,0.3);
+	left: -8px;
+	top: -10px;
+    transform: rotate(20deg);
+}
+.bt-destaque:hover{
+	box-shadow: 1px 1px 5px #555;
+	font-size: 15px;
+}
+.bt-destaque:hover::after{
+	left: 155px;
+	transition: all 0.4s cubic-bezier(0.87, 0.06, 0.15, 0.99);
+}
+.receba .infos-pratos {
+	text-align: center;
+}
+.receba .imagem {
+	text-align: center;
+	position: relative;
+}
+.receba .imagem img {
+	width: auto;
+}
+.receba .imagem::before {
+	content: '1';
+	display: block;
+	background: rgb(34,193,195);
+	background: linear-gradient(90deg, rgba(34,193,195,1) 10%, rgba(33,191,192,1) 32%, rgba(32,178,170,1) 58%, rgba(33,189,188,1) 91%, rgba(32,178,170,1) 100%);
+	color: #fff;
+	border-radius: 50%;
+	width: 40px;
+	font-size: 24px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	position: absolute;
+	top: 5px;
+	left: 90px;
+}
+.receba .bloco-3:nth-child(2)  .imagem::before{
+	content: '2';
+}
+.receba .bloco-3:nth-child(3)  .imagem::before{
+	content: '3';
+}
